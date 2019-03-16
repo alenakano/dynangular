@@ -13,7 +13,6 @@ import { DadosComponent } from '../dados.component';
 export class HomeComposerComponent implements OnInit {
 
   @Input() itensHome: ItensHome[];
-  currentAdIndex = -1;
   @ViewChild(ComponentRefDirective) homeRef: ComponentRefDirective;
 
   public homeBuilder: ItensHome[];
