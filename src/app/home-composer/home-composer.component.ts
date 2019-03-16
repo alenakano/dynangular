@@ -6,7 +6,7 @@ import { HomeBuilder } from '../home-builder';
 import { DadosComponent } from '../dados.component';
 
 @Component({
-  selector: 'app-home-composer',
+  selector: 'home-composer',
   templateUrl: './home-composer.component.html',
   styleUrls: ['./home-composer.component.css']
 })
@@ -35,11 +35,11 @@ export class HomeComposerComponent implements OnInit {
       this.homeBuilder = this.itensHome;
       
       //Para cada valor trazido pelo Input:
-      this.itensHome.forEach((itens, index) => {
+      this.itensHome.forEach((item) => {
         
         //resolver qual componente se trata
         let componentFactory = this.componentFactoryResolver
-          .resolveComponentFactory(itens[index].component);
+          .resolveComponentFactory(item.component);
 
         //ver em qual lugar da tela (container) ele será inserido
         let homeContainerRef = this.homeRef.viewContainerRef;
@@ -48,7 +48,7 @@ export class HomeComposerComponent implements OnInit {
         let componentRef = homeContainerRef.createComponent(componentFactory);
 
         //inserir dados que vem com o componente
-        (<DadosComponent>componentRef.instance).data = itens[index].data;
+        (<DadosComponent>componentRef.instance).data = item.data;
 
       });
     }
