@@ -8,6 +8,7 @@ import { Teste01Component } from './teste01/teste01.component';
 import { Teste02Component } from './teste02/teste02.component';
 import { Teste03Component } from './teste03/teste03.component';
 import { HomeService } from './home.service';
+import { TesteUnknownComponent } from './teste-unknown/teste-unknown.component';
 
 @NgModule({
   declarations: [
@@ -16,12 +17,13 @@ import { HomeService } from './home.service';
     HomeComposerComponent,
     Teste01Component,
     Teste02Component,
-    Teste03Component
+    Teste03Component,
+    TesteUnknownComponent
   ],
   imports: [
     BrowserModule
   ],
-  entryComponents: [Teste01Component, Teste02Component, Teste03Component],
+  entryComponents: [Teste01Component, Teste02Component, Teste03Component, TesteUnknownComponent],
   providers: [HomeService],
   bootstrap: [AppComponent]
 })
