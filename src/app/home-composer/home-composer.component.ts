@@ -5,6 +5,8 @@ import { ItensHome } from '../itens-home';
 import { HomeBuilder } from '../home-builder';
 import { DadosComponent } from '../dados.component';
 
+import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
+
 @Component({
   selector: 'home-composer',
   templateUrl: './home-composer.component.html',
@@ -51,5 +53,10 @@ export class HomeComposerComponent implements OnInit {
 
       });
     }
+  }
+
+  drop(event: CdkDragDrop<string[]>) {
+    alert(1);
+    moveItemInArray(this.itensHome, event.previousIndex, event.currentIndex);
   }
 }

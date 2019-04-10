@@ -1,1 +1,8 @@
-<ng-template componentRef></ng-template>
+<div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)" [cdkDropListData]="itensHome">
+    <ng-template componentRef></ng-template>
+
+    <!-- <div  *ngFor="let item of itensHome">
+        Drag motherfucker
+    </div> -->
+</div>
+
