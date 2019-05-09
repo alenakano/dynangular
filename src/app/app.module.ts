@@ -10,6 +10,8 @@ import { Teste03Component } from './teste03/teste03.component';
 import { HomeService } from './home.service';
 import { TesteUnknownComponent } from './teste-unknown/teste-unknown.component';
 
+import { DragDropModule } from '@angular/cdk/drag-drop';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +23,8 @@ import { TesteUnknownComponent } from './teste-unknown/teste-unknown.component';
     TesteUnknownComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    DragDropModule,
   ],
   entryComponents: [Teste01Component, Teste02Component, Teste03Component, TesteUnknownComponent],
   providers: [HomeService],

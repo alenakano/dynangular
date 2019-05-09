@@ -43,7 +43,7 @@ export class HomeService {
       new ItensHome(Teste03Component, this.icones ),
 
       new ItensHome(Teste02Component, {"info": "E as informações de cada componente são customizáveis!!!"}),
-    ];
+    ];  
   }
   
 }

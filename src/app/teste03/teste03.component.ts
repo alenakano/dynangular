@@ -5,6 +5,8 @@ import {
 } from '@angular/core';
 import { DadosComponent } from '../dados.component';
 
+import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
+
 @Component({
   selector: 'app-teste03',
   templateUrl: './teste03.component.html',
@@ -19,4 +21,7 @@ export class Teste03Component implements OnInit, DadosComponent {
   ngOnInit() {
   }
 
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.data.array, event.previousIndex, event.currentIndex);
+  }
 }
