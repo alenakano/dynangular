@@ -1,4 +1,4 @@
-<div class="col-16 bg-info text-white example-box" cdkDragLockAxis="y" cdkDrag>
+<div class="col-16 bg-info text-white example-box">
     <h1 class="text-center">{{data.texto}}</h1>
     <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
       <div class="example-box" style="float:left; padding: 0px 0px 0px 20px" *ngFor="let opcoes of data.array" cdkDrag>

@@ -1,8 +1,14 @@
-<div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)" [cdkDropListData]="itensHome">
-    <ng-template componentRef></ng-template>
-
-    <!-- <div  *ngFor="let item of itensHome">
-        Drag motherfucker
-    </div> -->
+<div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+    <ng-container *ngFor="let i of itens">
+        <ng-container *ngIf="i.component.componentType.name=='Teste01Component'">
+            <app-teste01 cdkDrag [data]="i.data"></app-teste01>
+        </ng-container>
+        <ng-container *ngIf="i.component.componentType.name=='Teste02Component'">
+            <app-teste02 cdkDrag [data]="i.data"></app-teste02>
+        </ng-container>
+        <ng-container *ngIf="i.component.componentType.name=='Teste03Component'">
+            <app-teste03 cdkDrag [data]="i.data"></app-teste03>
+        </ng-container>
+    </ng-container>
 </div>
 

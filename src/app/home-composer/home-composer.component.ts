@@ -2,10 +2,10 @@ import { Component, OnInit, Input, ViewChild, ComponentFactoryResolver } from '@
 
 import { ComponentRefDirective } from '../component-ref.directive';
 import { ItensHome } from '../itens-home';
-import { HomeBuilder } from '../home-builder';
-import { DadosComponent } from '../dados.component';
 
 import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
+
+import { Montagem } from './montagem';
 
 @Component({
   selector: 'home-composer',
@@ -18,14 +18,12 @@ export class HomeComposerComponent implements OnInit {
   @ViewChild(ComponentRefDirective) homeRef: ComponentRefDirective;
 
   public homeBuilder: ItensHome[];
+  public itens: any[] = [];
 
   constructor(private componentFactoryResolver: ComponentFactoryResolver) { }
 
   ngOnInit() {
     this.loadComponent();
-  }
-
-  ngOnDestroy() {
   }
 
   loadComponent() {
@@ -37,26 +35,32 @@ export class HomeComposerComponent implements OnInit {
       
       //Para cada valor trazido pelo Input:
       this.itensHome.forEach((item) => {
-        
+        let montagem: Montagem = new Montagem();
+
+        montagem.data = item.data;
+
         //resolver qual componente se trata
         let componentFactory = this.componentFactoryResolver
           .resolveComponentFactory(item.component);
+        montagem.component = componentFactory;
+        
+        this.itens.push(montagem);
+
 
         //ver em qual lugar da tela (container) ele será inserido
-        let homeContainerRef = this.homeRef.viewContainerRef;
+        // let homeContainerRef = this.homeRef.viewContainerRef;
 
         //cria componente na tela
-        let componentRef = homeContainerRef.createComponent(componentFactory);
+        // let componentRef = homeContainerRef.createComponent(componentFactory);
 
         //inserir dados que vem com o componente
-        (<DadosComponent>componentRef.instance).data = item.data;
+        // (<DadosComponent>componentRef.instance).data = item.data;
 
       });
     }
   }
 
-  drop(event: CdkDragDrop<string[]>) {
-    alert(1);
-    moveItemInArray(this.itensHome, event.previousIndex, event.currentIndex);
+  drop(event: CdkDragDrop<any[]>) {
+    moveItemInArray(this.itens, event.previousIndex, event.currentIndex);
   }
 }
