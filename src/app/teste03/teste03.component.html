@@ -1,7 +1,8 @@
 <div class="col-16 bg-info text-white example-box">
-    <h1 class="text-center">{{data.texto}}</h1>
-    <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
-      <div class="example-box" style="float:left; padding: 0px 0px 0px 20px" *ngFor="let opcoes of data.array" cdkDrag>
+  <h1 class="text-center">{{data.texto}}</h1>
+  <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+    <div class="example-box" style="float:left; padding: 0px 0px 0px 20px" *ngFor="let opcoes of data.array">
+      <div cdkDrag>
         <span style="display:block;text-align:center;" [attr.class]="opcoes.icone"></span>
         <br>
         <p>
@@ -9,6 +10,7 @@
         </p>
       </div>
       <br style="clear:left;">
-    </div>
+    </div>  
+  </div>
 </div>  
 

@@ -21,7 +21,7 @@ export class Teste03Component implements OnInit, DadosComponent {
   ngOnInit() {
   }
 
-  drop(event: CdkDragDrop<string[]>) {
+  drop(event: CdkDragDrop<any[]>) {
     moveItemInArray(this.data.array, event.previousIndex, event.currentIndex);
   }
 }
