@@ -5,8 +5,6 @@ import { ItensHome } from '../itens-home';
 
 import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 
-import { Montagem } from './montagem';
-
 @Component({
   selector: 'home-composer',
   templateUrl: './home-composer.component.html',
@@ -34,17 +32,17 @@ export class HomeComposerComponent implements OnInit {
       this.homeBuilder = this.itensHome;
       
       //Para cada valor trazido pelo Input:
-      this.itensHome.forEach((item) => {
-        let montagem: Montagem = new Montagem();
+      // this.itensHome.forEach((item) => {
+      //   let montagem: Montagem = new Montagem();
 
-        montagem.data = item.data;
+      //   montagem.data = item.data;
 
-        //resolver qual componente se trata
-        let componentFactory = this.componentFactoryResolver
-          .resolveComponentFactory(item.component);
-        montagem.component = componentFactory;
+      //   //resolver qual componente se trata
+      //   let componentFactory = this.componentFactoryResolver
+      //     .resolveComponentFactory(item.component);
+      //   montagem.component = componentFactory;
         
-        this.itens.push(montagem);
+      //   this.itens.push(montagem);
 
 
         //ver em qual lugar da tela (container) ele será inserido
@@ -56,11 +54,11 @@ export class HomeComposerComponent implements OnInit {
         //inserir dados que vem com o componente
         // (<DadosComponent>componentRef.instance).data = item.data;
 
-      });
+      // });
     }
   }
 
   drop(event: CdkDragDrop<any[]>) {
-    moveItemInArray(this.itens, event.previousIndex, event.currentIndex);
+    moveItemInArray(this.homeBuilder, event.previousIndex, event.currentIndex);
   }
 }

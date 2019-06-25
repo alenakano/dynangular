@@ -1,16 +1,16 @@
 <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
-    <ng-container *ngFor="let i of itens">
-        <ng-container *ngIf="i.component.componentType.name=='Teste01Component'">
+    <ng-container *ngFor="let i of homeBuilder">
+        <ng-container *ngIf="i.component.name=='Teste01Component'">
             <div cdkDrag>
                 <app-teste01  [data]="i.data"></app-teste01>
             </div>
         </ng-container>
-        <ng-container *ngIf="i.component.componentType.name=='Teste02Component'">
+        <ng-container *ngIf="i.component.name=='Teste02Component'">
             <div cdkDrag>
                 <app-teste02  [data]="i.data"></app-teste02>
             </div>
         </ng-container>
-        <ng-container *ngIf="i.component.componentType.name=='Teste03Component'">
+        <ng-container *ngIf="i.component.name=='Teste03Component'">
             <div cdkDrag>
                 <app-teste03 [data]="i.data"></app-teste03>
             </div>
