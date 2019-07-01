@@ -1,27 +1,45 @@
-# Dynangular
+# Dynamic Angular project
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.3.
 
-## Development server
+## About
+This project is a proof of concept that tests the possibility to use the feature **drag and drop** from Angular Material Library and dynamic renderization of components.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Team Members
+Alexandre Nakano Marques (https://github.com/alenakano/).\
+Maria Luiza Felix (https://github.com/malufelix/).
 
-## Code scaffolding
+## Credits
+Part of this project was based on the solution made by c3ber (https://stackblitz.com/@c3rber).\
+Thanks a lot!
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Set Up
+This project requires Node.JS (v.10.x) and Angular(v.7.x).\
+Clone this project and install the dependencies using **npm install** via command line at the same level of the file package.json.\
+Use the command **npm start** or **ng serve** to start the project.\
+Access from a browser the addreess *http://localhost:4200*.\
+Test the drag and drop feature of the components.
 
-## Build
+***
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+# Projeto Dynamic Angular
 
-## Running unit tests
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.3.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Sobre
+Este projeto é uma prova de conceito que testa a possibilidade de mesclar soluções de renderização dinâmica e reordenamento dos componentes de tela por meio de **drag and drop** utilizando a biblioteca Angular Material.
 
-## Running end-to-end tests
+## Equipe
+Alexandre Nakano Marques (https://github.com/alenakano/).\
+Maria Luiza Felix (https://github.com/malufelix/).
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Créditos
+Parte deste projeto se baseou na solução feita por c3ber (https://stackblitz.com/@c3rber).\
+Muito obrigado!
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Instalação
+É necessário que o usuário tenha Node.JS (v.10.x) e Angular (v.7.x).\
+Clonar o projeto e realizar as instalações de dependências por meio do comando **npm install** realizado pela linha de comando no nível do arquivo package.json.\
+Utilizar o comando **npm start** ou **ng serve** para inicializar o projeto.\
+Entrar via browser no endereço *http://localhost:4200*.\
+Testar a movimentação dos componentes na tela.
